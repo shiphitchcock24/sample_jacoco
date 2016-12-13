@@ -8,5 +8,7 @@ build:
   ci:
     # Create folders for test and code coverage
     - mkdir -p shippable/codecoverage
-    - mvn install
-    - cp -r target shippable/codecoverage
+    - gradle clean build
+    - gradle jacocoTestReport
+    - cp -r build/target shippable/codecoverage
+
